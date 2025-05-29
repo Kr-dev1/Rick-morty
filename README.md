@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# Rick and Morty Character Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application for exploring characters from the Rick and Morty universe. Built with TypeScript, Vite, and Material-UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Character Search**: Search through all Rick and Morty characters with real-time filtering
+- **Advanced Filtering**: Filter characters by:
+  - Status (Alive, Dead, Unknown)
+  - Species
+  - Gender
+  - Origin
+  - Episode appearances
+- **Infinite Scroll**: Dynamically load more characters as you scroll
+- **Character Profiles**: View detailed information about each character
+- **Episode List**: See all episodes a character has appeared in
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://reactjs.org/) - Frontend library
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Vite](https://vitejs.dev/) - Build tool and dev server
+- [React Query](https://tanstack.com/query/latest) - Data fetching and caching
+- [Material-UI](https://mui.com/) - Styling and components
+- [React Router](https://reactrouter.com/) - Navigation
+- [Axios](https://axios-http.com/) - HTTP client
+- [Rick and Morty API](https://rickandmortyapi.com/) - Data source
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn or bun*
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Kr-dev1/Rick-morty.git
+cd rick-n-morty
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+#or
+bun install*
+```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
+#or
+bun dev*
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+4. Open your browser and navigate to `http://localhost:5173`
+
+## Project Structure
+
+```
+src/
+├── api/          # API integration and data fetching
+├── components/   # Reusable React components
+├── pages/        # Page components
+└── assets/       # Static assets
 ```
